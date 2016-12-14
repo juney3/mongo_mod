@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Edit a cat!</title>
+</head>
+
+<body>
+	<h1>Edit cat info</h1>
+	<div  id="name_form">
+			<% for (i in one_cat) { %>
+			<form action="/cats/<%= one_cat[i]._id %>" method="post">
+				<div class="form_fields">
+					<label for="name">Name: </label>
+						<input type="text" name="name" value="<%= one_cat[i].name %>">
+				</div>
+				<div class="form_fields">
+					<label for="age">Age: </label>
+						<input type="text" name="age" value="<%= one_cat[i].age %> ">
+				</div>
+				<div class="form_fields">
+					<label for="age">Color: </label>
+						<input type="text" name="color" value="<%= one_cat[i].color %>">
+				</div>
+				<div class="form_fields">
+					<label for="age">Personality: </label>
+						<input type="text" name="personality" value="<%= one_cat[i].personality %>">
+				</div>
+				<input id="button" type="submit" value="Edit Info">
+				</div>
+			</form>
+			 <% } %>
+		</div>
+</body>
+</html>

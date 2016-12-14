@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>View a cat!</title>
+</head>
+
+<body>
+<h1>Cat Info</h1>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Color</th>
+			<th>Personality</th>
+		</tr>
+		<% for (i in one_cat) { %>
+		<tr> 
+			<td><%=  one_cat[i].name  %> </td>
+			<td><%=  one_cat[i].age  %> </td>
+			<td><%=  one_cat[i].color  %> </td>
+			<td><%=  one_cat[i].personality  %> </td>
+		</tr>
+		<% } %>
+	</table>
+
+	<a href="/"> <input type=button value="Back to Home"></a>
+</body>
+</html>

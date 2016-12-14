@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>All the Cats!</title>
+</head>
+
+<body>
+<h1>Cat List</h1>
+	<a href="cats/new"> <input type="button" value="Add a Cat!"></a>
+	<table style="margin-top: 15px">
+		<tr>
+			<th>Name</th>
+			<th>Actions</th>
+		</tr>
+		<% for (i in cats) { %>
+		<tr> 
+			<td> <a href="/cats/<%= cats[i]._id %>"><%=  cats[i].name  %> </a></td>
+			<td>
+				<a href="/cats/edit/<%= cats[i]._id %>"><input type=button value="Edit Cat Info" style="display:inline-block"></a>
+				<form id="remove" action="/cats/destroy/<%= cats[i]._id %>" method="post" style="display:inline-block">
+					<input type=submit value="Remove Cat Info">
+				</form>
+			</td>
+		</tr>
+		<% } %>
+	</table>
+</body>
+</html>
